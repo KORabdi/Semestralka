@@ -64,3 +64,8 @@ S Latte
 </ul>
 ```
 Výhoda na první pohled je jasná. :)
+ Struktura DB
+-------------
+Pro praci s daty jsme použili relační databazu MySQL. Její struktura výpada nasledovně:
+![](https://i.imgur.com/LBnCLFh.png)
+Není navržena úplně dokonalé, ale pro náš projekt stačí.
