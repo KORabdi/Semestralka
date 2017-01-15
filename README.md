@@ -1,8 +1,5 @@
 Popis hlavních rysů programu (funkčnost hlavních skriptů) 
-===================
-
-
-----------  
+=================== 
 
 
 Model-View-Controller (MVC) a Adresařová struktura
@@ -37,12 +34,15 @@ Každý formulář který se pošle, tak se pošle na akci presenteru. Který po
 
  Zabezpečení, algoritmy zpracování dat
 -------------
-Formuláře jsou také ochráněné csrf tokenem, který zabrání odesílaní dát z jiného zdroje, než je webová stránka. Algoritmus je ukázán v API modelu. Implementujeme to v base presenteru v startup metodě.
+Formuláře jsou také ochráněné csrf tokenem, který zabrání odesílaní dát z jiného zdroje, než je webová stránka. Algoritmus je ukázán v API modelu. Implementujeme to v base presenteru v startup metodě. 
 ![](https://i.imgur.com/iaN9tAI.png)
+
  Latte format
 -------------
-Nette používá Latte. Díky němu nemusíme přemyslet nad htmlSpecialChars, escapování, a také nám hodně zpříjemni život, a vzhled. Taky nám umožňuje používat filtry.
-Př: Bez Latte 
+Nette používá Latte. Díky němu nemusíme přemýšlet nad htmlSpecialChars, escapování, a také nám hodně zpříjemni život, a vzhled. Taky nám umožňuje používat filtry. 
+
+Bez Latte:
+
 ```
 <?php if ($items): ?>
     <?php $counter = 1 ?>
@@ -55,7 +55,9 @@ Př: Bez Latte
     </ul>
 <?php endif?>
 ```
-S Latte
+
+S Latte:
+
 ```
 <ul n:if="$items">
 {foreach $items as $item}
@@ -63,22 +65,22 @@ S Latte
 {/foreach}
 </ul>
 ```
-Výhoda na první pohled je jasná. :)
+Výhoda je jasná na první pohled. :)
+
  Struktura DB
 -------------
-Pro praci s daty jsme použili relační databazu MySQL. Její struktura výpada nasledovně:
+Pro práci s daty jsme použili relační databazu MySQL. Její struktura výpada následovně: 
 ![](https://i.imgur.com/LBnCLFh.png)
 
 Není navržena úplně dokonalé, však pro náš projekt stačí.
+
  Autocomplete a prace s filtry
 -------------
-V sekci Twitch chat log, který najdete až se přihlasite, naleznete značku lupy. Tu rozklíkněte a zobrazi se vám formulář. V první položce (Name) zadate jmeno užívatele, kterého hledate. V druhé položce (Date) zadate datum a čas, kdy užívatel zpravu napsal. Třetí položka (Message) je pro vyhledávání samotného výrazu ve zpravě. Všechny ty tří položky nejsou povinné, proto stačí pokud budete znát jenom jeden z úvedených informací. Je zajímavé, že pokud nezadate datum, tak se vám data zobrazí od nejnovejšího až po starší. Ale pokud datum a čas zadate, tak se vám údaje zobrazí od nejblížšího k datě - Od staršího k novejšímu.
 
-Kod filtru naleznete v ChatModelu. 
+V sekci Twitch chat log, který najdete až se přihlasite, najdete značku lupy. Tu rozklíkněte a zobrazí se vám formulář. V první položce (Name) zadáte jméno uživatele, kterého hledáte. V druhé položce (Date) zadáte datum a čas, kdy uživatel zprávu napsal. Třetí položka (Message) je pro vyhledávání samotného výrazu ve zprávě. Všechny ty tří položky nejsou povinné, proto stačí pokud budete znát jenom jeden z uvedených informací. Je zajímavé, že pokud nezadáte datum, tak se vám data zobrazí od nejnovějšího až po starší. Ale pokud datum a čas zadáte, tak se vám údaje zobrazí od nejbližšího k datu - Od staršího k novějšímu.
 
-Kod autocompleteru naleznete v sekci www/js/twitch.js. Jeji funkčnost je jednoduchá, po napsáni hledaného slova, JS pošle AJAXový request na server kde potom data zpracuje a vypiše je. 
+Kód filtru naleznme v ChatModelu.
+
+Kód autocompleteru naleznme v sekci www/js/twitch.js. Její funkčnost je jednoduchá, po napsáni hledaného slova, JS pošle AJAXový request na server kde potom data zpracuje a vypíše je.
 
 ![](https://i.imgur.com/QwrJH8W.png)
-
-
-
