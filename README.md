@@ -69,4 +69,14 @@ Výhoda na první pohled je jasná. :)
 Pro praci s daty jsme použili relační databazu MySQL. Její struktura výpada nasledovně:
 ![](https://i.imgur.com/LBnCLFh.png)
 
-Není navržena úplně dokonalé, ale pro náš projekt stačí.
+Není navržena úplně dokonalé, však pro náš projekt stačí.
+ Autocomplete a prace s filtry
+-------------
+V sekci Twitch chat log, který najdete až se přihlasite, najdete značku lupy. Tu rozklíkněte a zobrazi se vám formulář. V první položce (Name) zadate jmeno užívatele, kterého hledate. V druhé položce (Date) zadate datum a čas, kdy užívatel zpravu napsal. Třetí položka (Message) je pro vyhledávání samotného výrazu ve zpravě. Všechny ty tří položky nejsou povinné, proto stačí pokud budete znát jenom jeden z úvedených informací. Je zajímavé, že pokud nezadate datum, tak se vám data zobrazí od nejnovejšího až po starší. Ale pokud datum a čas zadate, tak se vám údaje zobrazí od nejblížšího k datě - Od staršího k novejšímu.
+
+Kod filtru naleznete v ChatModelu. 
+
+Kod autocompleteru naleznete v sekci www/js/twitch.js. Jeji funkčnost je jednoduchá, po napsáni hledaného slova, JS pošle AJAXový request na server kde potom data zpracuje a vypiše je. 
+
+TODO: pridat fotku z webu  
+
