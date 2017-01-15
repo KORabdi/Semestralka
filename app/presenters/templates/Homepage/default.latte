@@ -1,0 +1,63 @@
+{* This is the welcome page, you can delete it *}
+
+{block content}
+<div class="col-md-7">
+{control homenav}
+{if count($posts)}
+	{foreach $posts as $post}
+	<article>
+		<header><h2>{$post['title']}</h2></header>
+		<footer><small>Posted on {$post['date']|date:'%d.%m.%Y'} {if $admin}| <a href="#" data-id="{$post['id']}" data-toggle="modal" data-target="#editModal">Edit</a> | <a n:href="Homepage:remove $post['id']">Remove</a>	{/if}</small></footer>		
+		<div class="lead">
+	 	{$post['body']|truncate:250}
+	 	<a n:href="Article:default $post['id']">Read more</a>
+		</div>		
+		<footer>
+			{foreach $showLabels($post['id']) as $label}
+				{if $label['id'] == 1}
+				<span class="label label-default">{$label['discription']}</span>
+				{else}
+				<span class="label label-primary">{$label['discription']}</span>
+				{/if}				
+			{/foreach}
+		</footer>		
+		<hr>		
+	</article>
+	{/foreach}
+{else}
+    	<p>Zatím nebyl napsán žádný článek.</p>
+{/if}
+	<nav>
+	  <ul class="pagination">
+	  {if $page > 1}
+	    <li>
+	      <a href="?page={$page - 1}" aria-label="Previous">
+	        <span aria-hidden="true">&laquo;</span>
+	      </a>
+	    </li>
+	  {/if}
+	  {for $i=1;$i<$pages+1;$i++}
+	    <li class={$page==$i?'active'}><a href="?page={$i}">{$i}</a></li>
+	  {/for}	    
+	  {if $page < $pages}
+	    <li>
+	      <a href="?page={$page + 1}" aria-label="Next">
+	        <span aria-hidden="true">&raquo;</span>
+	      </a>
+	    </li>
+	  {/if}
+	  </ul>
+	</nav>			
+</div>
+{/block}
+
+{block scripts}
+{include parent}
+<script src="{$basePath}/www/js/modal.js"></script>
+{/block}
+
+
+{block title}Posts{/block}
+
+{block head}
+{/block}

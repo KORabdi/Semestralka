@@ -1,0 +1,17 @@
+article .row{
+	margin-bottom: 5px;
+}
+
+article .row a{
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+article .row a:hover{
+	text-decoration: underline;
+}
+
+.date{
+	color: #ccc;
+}

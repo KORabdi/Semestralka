@@ -1,0 +1,65 @@
+{**
+ * @param string   $basePath web base path
+ * @param array    $flashes  flash messages
+ *}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>{ifset title}{include title|striptags} | {/ifset}Shiba doge bot v0.1</title>
+
+	<link rel="icon" href="{$basePath}/www/images/favicon.ico" type="image/x-icon" />
+	<meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<noscript>
+		<style type="text/css">
+		.nojs{
+			display: none !important;
+		}
+		
+		.nojsinverse{
+			display: block !important;
+		}
+		</style>
+	</noscript>
+    <!-- Bootstrap -->
+    <link href="{$basePath}/www/include/bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{$basePath}/www/css/style.css" rel="stylesheet">
+    <link href="{$basePath}/www/css/blog.css" rel="stylesheet">
+	{include head}
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+	{control navControl}
+	
+	<div class="container">
+		<div class="containter-row">
+			<div class="row">
+				{include '@aside.latte'}
+				{include content}
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{$basePath}/www/include/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+	<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
+	<script src="{$basePath}/www/include/jqcookie/jquery.cookie.js"></script>
+	<script src="{$basePath}/www/js/main.js"></script>
+	<script src="{$basePath}/www/js/login.js"></script>
+	{block scripts}
+	{/block}
+</body>
+</html>

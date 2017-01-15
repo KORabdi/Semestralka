@@ -1,0 +1,46 @@
+.profile{
+	margin-right: 50px;
+}
+
+.profile aside p{
+	font-size: 12px;
+}
+
+.profile aside ul {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.profile aside ul li{
+	float: left;
+	margin-right: 8px;
+}
+
+.profile aside ul li img {
+	width: 32px;
+	height: 32px;
+}
+
+.profile aside ul:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.row article header h2{
+	margin-bottom: 0px;
+}
+
+.row article footer {
+	margin-bottom: 10px;
+	color: black;
+}
+
+#editModal textarea{
+	height: 150px;
+}
+
+#addModal textarea{
+	height: 150px;
+}

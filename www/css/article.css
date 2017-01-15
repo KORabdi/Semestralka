@@ -1,0 +1,12 @@
+.comment-num{
+	font-size: 16px;
+	color: #ccc;
+}
+
+#comments{
+	margin-top:50px;
+}
+
+#message{
+	height: 100px;
+}

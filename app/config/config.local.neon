@@ -1,0 +1,9 @@
+parameters:
+
+
+database:
+	dsn: 'mysql:host=sql.endora.cz:3306;dbname=dogesemestralka'
+	user: '-'
+	password: '-'
+	options:
+		lazy: yes

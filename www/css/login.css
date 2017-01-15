@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+html,body{
+	height: 100%;
+	background: #333333
+}
+
+.container{
+	display: table;
+	max-width: 440px;
+	height: 100%;
+	min-height: 100%;
+}
+
+.form-signin{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.box{
+	border: 1px grey solid;
+	padding: 20px;
+	padding-top: 0px;
+	border-radius: 10px;
+	background: white;  
+}
+

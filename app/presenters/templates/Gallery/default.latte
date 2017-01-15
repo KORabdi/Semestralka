@@ -1,0 +1,49 @@
+{* This is the welcome page, you can delete it *}
+
+{block content}
+<div class="col-md-7">
+	<h1>Gallery</h1>
+	{control galleryAdminControl}
+	<div class="gallery">
+		<div class="row">
+			{foreach $images as $image}
+			<div class="col-sm-4 images">
+				{if $admin}
+				<div class="row">
+					<div class="col-sm-12">
+						<a href="{$basePath}/www/images/gallery/{$image['name']}" data-title="{$image['description']}" data-lightbox="gallery">
+							<img src="{$basePath}/www/images/gallery/small/{$image['name']}" alt="{$image['description']}">
+						</a>
+					</div>
+					<div class="col-sm-12">
+						<small>
+							<a href="{$baseUrl}/gallery/remove?id={$image['id']}">Remove</a> | <a href="#" data-id="{$image['id']}" data-desc="{$image['description']}" data-toggle="modal" data-target="#editModal">Edit</a>
+						</small>
+					</div>
+				</div>
+				{else}
+					<div class="col-sm-12">
+						<a href="{$basePath}/www/images/gallery/{$image['name']}" data-title="{$image['description']}" data-lightbox="gallery">
+							<img src="{$basePath}/www/images/gallery/small/{$image['name']}" alt="{$image['description']}">
+						</a>
+					</div>
+				{/if}
+			</div>
+			{/foreach}
+		</div>
+	</div>
+</div>
+{/block}
+
+{block scripts}
+{include parent}
+<script src="{$basePath}/www/include/lightbox/js/lightbox.min.js"></script>
+<script src="{$basePath}/www/js/modalgallery.js"></script>
+{/block}
+
+{block title}Archive{/block}
+
+{block head}
+<link href="{$basePath}/www/include/lightbox/lightbox.css" rel="stylesheet">
+<link href="{$basePath}/www/css/gallery.css" rel="stylesheet">
+{/block}

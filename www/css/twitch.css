@@ -1,0 +1,26 @@
+.profile{
+	display: none;
+}
+
+#tab .panel{
+	display: none;
+}
+
+#searchForm{
+	margin-top: 15px;
+}
+
+@media screen and (max-width: 640px) {
+	table {
+		overflow-x: auto;
+		display: block;
+	}
+}
+
+#twitch-name::-webkit-calendar-picker-indicator{
+  display: none;
+}
+
+#searchForm #loading{
+	display:none;
+}

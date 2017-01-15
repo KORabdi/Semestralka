@@ -1,0 +1,32 @@
+{* This is the welcome page, you can delete it *}
+
+{block content}
+<div class="col-md-7">
+	<h1>Archive</h1>
+	{foreach $archives as $year => $archive}
+	<article>
+		<h3>{$year}</h3>
+		{foreach $archive as $arch}
+		<div class="row">
+			<div class="col-md-9">
+			<a n:href="Article:default $arch['id']">{$arch['title']}</a>
+			</div>
+			<div class="col-md-3 date">
+			{$arch['date']|date:'%d.%m.%Y'}
+			</div>
+		</div>
+		{/foreach}
+	</article>
+	{/foreach}
+</div>
+{/block}
+
+{block scripts}
+{include parent}
+{/block}
+
+{block title}Archive{/block}
+
+{block head}
+<link href="{$basePath}/www/css/archive.css" rel="stylesheet">
+{/block}
