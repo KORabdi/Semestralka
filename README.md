@@ -78,5 +78,7 @@ Kod filtru naleznete v ChatModelu.
 
 Kod autocompleteru naleznete v sekci www/js/twitch.js. Jeji funkčnost je jednoduchá, po napsáni hledaného slova, JS pošle AJAXový request na server kde potom data zpracuje a vypiše je. 
 
-TODO: pridat fotku z webu  
+![](https://i.imgur.com/QwrJH8W.png)
+
+
 
