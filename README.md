@@ -39,7 +39,7 @@ Každý formulář který se pošle, tak se pošle na akci presenteru. Který po
 -------------
 Formuláře jsou také ochráněné csrf tokenem, který zabrání odesílaní dát z jiného zdroje, než je webová stránka. Algoritmus je ukázán v API modelu. Implementujeme to v base presenteru v startup metodě.
 ![](https://i.imgur.com/iaN9tAI.png)
- UML - Latte format
+ Latte format
 -------------
 Nette používá Latte. Díky němu nemusíme přemyslet nad htmlSpecialChars, escapování, a také nám hodně zpříjemni život, a vzhled. Taky nám umožňuje používat filtry.
 Př: Bez Latte 
