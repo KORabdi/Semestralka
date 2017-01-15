@@ -72,7 +72,7 @@ Pro praci s daty jsme použili relační databazu MySQL. Její struktura výpada
 Není navržena úplně dokonalé, však pro náš projekt stačí.
  Autocomplete a prace s filtry
 -------------
-V sekci Twitch chat log, který najdete až se přihlasite, najdete značku lupy. Tu rozklíkněte a zobrazi se vám formulář. V první položce (Name) zadate jmeno užívatele, kterého hledate. V druhé položce (Date) zadate datum a čas, kdy užívatel zpravu napsal. Třetí položka (Message) je pro vyhledávání samotného výrazu ve zpravě. Všechny ty tří položky nejsou povinné, proto stačí pokud budete znát jenom jeden z úvedených informací. Je zajímavé, že pokud nezadate datum, tak se vám data zobrazí od nejnovejšího až po starší. Ale pokud datum a čas zadate, tak se vám údaje zobrazí od nejblížšího k datě - Od staršího k novejšímu.
+V sekci Twitch chat log, který najdete až se přihlasite, naleznete značku lupy. Tu rozklíkněte a zobrazi se vám formulář. V první položce (Name) zadate jmeno užívatele, kterého hledate. V druhé položce (Date) zadate datum a čas, kdy užívatel zpravu napsal. Třetí položka (Message) je pro vyhledávání samotného výrazu ve zpravě. Všechny ty tří položky nejsou povinné, proto stačí pokud budete znát jenom jeden z úvedených informací. Je zajímavé, že pokud nezadate datum, tak se vám data zobrazí od nejnovejšího až po starší. Ale pokud datum a čas zadate, tak se vám údaje zobrazí od nejblížšího k datě - Od staršího k novejšímu.
 
 Kod filtru naleznete v ChatModelu. 
 
