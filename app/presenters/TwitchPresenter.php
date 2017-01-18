@@ -57,7 +57,7 @@ class TwitchPresenter extends BasePresenter
 	
 	
 	/**
-	 Json zpracovani dotazu
+	 * Json zpracovani dotazu
 	 */
 	public function actionJson(){
 		try{
